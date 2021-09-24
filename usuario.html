@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Esta descripción es la que aparece en los buscadores debajo de la URL" />
+	<link href="./styles/usuario.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600,700,800&display=swap" rel="stylesheet">
+	<title>Registro</title>
+</head>
+
+<body>
+	<header>
+	
+
+	</header>
+	<main>
+		<!-- SECCIÓN DEL FORMULARIO -->
+		<section>
+			<h1>Administración de Usuarios</h1>
+			<form>
+				<div class='field'>
+					<label>Nombre</label>
+					<input name='nombre' type='name'  autocomplete />
+				</div>
+                <div class='field'>
+					<label>Apellidos</label>
+					<input name='nombre' type='name'  autocomplete />
+				</div>
+				<div class='field'>
+					<label>Documento</label>
+					<input name='documento' type='number' autocomplete />
+				</div>
+                <div class='field'>
+					<label>Dirección</label>
+					<input name='Direccion' type='name' autocomplete />
+				</div>
+                <div class='field'>
+					<label>Teléfono</label>
+					<input name='Telefono' type='number' autocomplete />
+				</div>
+                <div class='field'>
+					<label>Email</label>
+					<input name='Email' type='email' autocomplete />
+				</div>
+                <div class='field'>
+					<label>Usuario</label>
+					<input name='Usuario' type='name' autocomplete />
+				</div>
+                <div class='field'>
+					<label>Contraseña</label>
+					<input name='Contraseña' type='password' autocomplete />
+				</div>
+				<div class='field'>
+					<label>Rol Usuario</label>
+					<select name='estadoLaboral' required>
+						<option selected disabled>Sel. una opción</option>
+						<option>Administrador</option>
+						<option>Vendedor</option>
+						<option>Cajero</option>
+					</select>
+				</div>				
+				<ul class='boton'>
+                    <div class='submit'>
+                        <button>
+                            Nuevo
+                        </button>
+                    </div>
+                    <div class='submit'>
+                        <button>
+                            Guardar
+                        </button>
+                    </div>
+                    <div class='submit'>
+                        <button>
+                            Modificar
+                        </button>
+                    </div>
+                    <div class='submit'>
+                        <button>
+                            Eliminar
+                        </button>
+                    </div>
+                    <div class='submit'>
+                        <button>
+                            Cancelar
+                        </button>
+                    </div>
+                    <div class='submit'>
+                        <button>
+                            Buscar
+                        </button>
+                    </div>
+
+                </ul>
+			</form>
+		</section>
+		
+	</main>
+</body>
+
+</html>

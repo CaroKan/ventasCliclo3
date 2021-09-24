@@ -1,0 +1,107 @@
+body{
+	margin: 0;
+    padding: 0;
+    background: url(../media/f4.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+h1{
+	font-size: 2rem;
+	font-weight: bold;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	color: #ffffff;
+}
+
+form{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background-color:#000000;
+
+	width: 100%;
+	max-width: 900px;
+	margin-top: 2.8rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.field{
+	display: flex;
+	flex-direction: column;
+
+	width: 12rem;
+	margin: 0.5rem 0;
+}
+
+.field label{
+	font-size: 0.9rem;
+	margin-left: 20px;
+	margin-bottom: 0.2rem;
+
+	color: #ffffff;
+}
+
+.field input{
+	font-size: 1rem;
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 1.5rem;
+	padding-left: 0.5rem;
+	border: 0.6px solid #1eff00;
+	border-radius: 5px;
+	
+}
+
+.field select{
+	font-size: 1rem;
+	margin-left: 20px;
+	width: 12rem;
+	height: 2rem;
+	padding-left: 1.5rem;
+	border: 0.6px solid #1eff00;
+	border-radius: 5px;
+}
+
+.boton{
+	display:flex ;
+    justify-content:space-between;
+    padding: 7px;
+	
+	margin: auto;
+
+
+}
+.submit button{
+	border: none;
+    outline: none;
+	font-size: 1.1rem;
+	padding: 0.5rem 1.4rem;
+	cursor: pointer;
+	color: #fff;
+	background-color: #18880e;
+	border-radius: 20px;
+	margin: 5px;
+}
+.submit button:hover{
+	cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
+/*
+.submit{
+	display: flex;
+	justify-content: space-around;
+
+	width: 100%;
+	margin-top: 1.75rem;
+}*/
+
+
+
+
