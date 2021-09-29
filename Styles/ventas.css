@@ -1,7 +1,10 @@
 body{
     margin:0;
     font-family:sans-serif;
-    background-color: rgba(216,203,187,0.2)
+    
+    background: url(../media/f4.jpg) no-repeat center top;
+    background-size: cover;
+    height: 100vh;
 }
 /* Menu de navegacion */
 .menu{
