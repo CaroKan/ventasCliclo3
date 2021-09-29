@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles/lista_ventas.css">
+    <title>Listado de Ventas</title>
+</head>
+<body>
+    <!--Menu Navegacion  -->
+    <div class="menu"> 
+        <h1>DEV-TEAM</h1>
+        <ul>
+            <li>
+                <a href="#" class="item"><img src="/assets/icons/home_24dp.svg" alt="inicio">INICIO</a>
+            </li>
+            <li>
+               <a href="#" class="item"><img src="/assets/icons/inventory_2_24dp.svg" alt="productos">PRODUCTOS</a>
+            </li>
+            <li>
+                <a href="#" class="item"><img src="/assets/icons/store_24dp.svg" alt="ventas">VENTAS</a>
+            </li>
+            <li>                
+                <a href="#" class="item"><img src="/assets/icons/manage_accounts_24dp.svg" alt="roles">USUARIOS</a>
+            </li>
+        </ul>
+        <div  class="user_img">
+            <img class="userimg" src="/assets/img/usuario.png" alt="Foto del usuario">
+        </div>
+        <div class= "user_data">
+            <div>
+                <span>Usuario:</span>
+                <span>XXXXXXX</span>
+            </div>
+            <div>
+                <span>Rol:</span>
+                <span>XXXXXXX</span>
+            </div>   
+        </div>
+    </div>
+
+    <!-- Listado de Ventas -->
+    <div class="main">
+        <h2>VENTAS</h2>
+        <div class="searcher">
+            <label for="search">Buscar Venta</label>
+                <input type="search" name="" id="search" placeholder="Id Factura">
+            <label for="search">
+                <img src="/assets/icons/search_black_24dp.svg" alt="buscador">
+            </label>
+        </div>
+        <a href="#" class="insert">Nueva Venta</a>
+        <table>
+            <thead>
+                <th>ID FACTURA</th>
+                <th>FECHA</th>
+                <th>DOCUMENTO</th>
+                <th>CLIENTE</th>
+                <th>VENDEDOR</th>                
+            </thead>
+            <tbody>
+                <tr class="line">
+                    <td>001</td>
+                    <td>01-02-2021</td>
+                    <td>45.963.254</td>
+                    <td>CLIENTE 1</td>
+                    <td>VENDEDOR 1</td>
+                    <td>
+                        <a href="#" class="edit">Ver detalles</a>
+                    </td>
+                </tr>
+                <tr class="line">
+                    <td>002</td>
+                    <td>01-02-2021</td>
+                    <td>45.963.254</td>
+                    <td>CLIENTE 1</td>
+                    <td>VENDEDOR 2</td>
+                    <td>
+                        <a href="#" class="edit">Ver detalles</a>
+                    </td>
+                </tr>
+                <tr class="line">
+                    <td>003</td>
+                    <td>01-02-2021</td>
+                    <td>45.963.254</td>
+                    <td>CLIENTE 2</td>
+                    <td>VENDEDOR 1</td>
+                    <td>
+                        <a href="#" class="edit">Ver detalles</a>
+                    </td>
+                </tr>
+                <tr class="line">
+                    <td>004</td>
+                    <td>01-03-2021</td>
+                    <td>9.963.254</td>
+                    <td>CLIENTE 3</td>
+                    <td>VENDEDOR 1</td>
+                    <td>
+                        <a href="#" class="edit">Ver detalles</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+</html>

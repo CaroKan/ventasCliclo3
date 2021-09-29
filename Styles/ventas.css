@@ -1,0 +1,154 @@
+body{
+    margin:0;
+    font-family:sans-serif;
+    background-color: rgba(216,203,187,0.2)
+}
+/* Menu de navegacion */
+.menu{
+    position: fixed;
+    top:0;
+    height: 100vh;
+    width: 15%;
+    background-color: rgb(61, 60, 60);
+    border-right: 4px solid rgb(7, 153, 63);
+    color: white
+}
+h1, h2{
+    color: rgb(7, 153, 63);
+    font-family: serif;
+    font-style: oblique;
+    text-align: center;
+}  
+ul{
+    padding: 15px 5px;
+    list-style-type: none;
+}
+li{
+    margin:0;
+    padding-top: 20px;
+    border-bottom: 4px solid rgb(7, 153, 63);
+    overflow: hidden;
+}
+li:hover{
+    border-right: 2px solid rgb(7, 153, 63);
+    box-shadow: 5px 5px rgb(0, 0, 0,0.2);   
+}
+li:active{
+    background-color: rgb(7, 153, 63);
+}
+.item{
+    text-decoration: none;
+    color:white;    
+    display: block;
+} 
+
+
+.user_data,.user_img{
+    width: 95%;
+    margin-left: 3px;
+    text-align: center;
+}
+.user_data{
+    
+    font-size: 12px;
+}
+.user_img{
+    margin-top: 4em;
+}
+.userimg{
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+/* Formulario */
+
+form{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background-color: rgb(61, 60, 60);
+    border-radius: 10px;
+	width: 100%;
+	max-width: 900px;
+	margin-top: 2.8rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.field{
+	display: flex;
+	flex-direction: column;
+
+	width: 12rem;
+	margin: 0.5rem 0;
+}
+
+.field label{
+	font-size: 0.9rem;
+	margin-left: 20px;
+	margin-bottom: 0.2rem;
+
+	color: #ffffff;
+}
+
+.field input{
+	font-size: 1rem;
+	margin-left: 20px;
+	margin-right: 20px;
+	height: 1.5rem;
+	padding-left: 0.5rem;
+	border: 0.6px solid #1eff00;
+	border-radius: 5px;
+	
+}
+
+.field select{
+	font-size: 1rem;
+	margin-left: 20px;
+	width: 12rem;
+	height: 2rem;
+	padding-left: 1.5rem;
+	border: 0.6px solid #1eff00;
+	border-radius: 5px;
+}
+
+.boton{
+	display:flex ;
+    justify-content:space-between;
+    padding: 7px;
+	
+	margin: auto;
+
+
+}
+.submit button{
+	border: none;
+    outline: none;
+	font-size: 1.1rem;
+	padding: 0.5rem 1.4rem;
+	cursor: pointer;
+	color: #fff;
+	background-color: #18880e;
+	border-radius: 20px;
+	margin: 5px;
+}
+.submit button:hover{
+	cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+table{
+    width: 90%;
+    border: 1px solid #1eff00;
+    margin: 2%;
+}
+th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #1eff00;
+    padding: 0.2em;
+    background: rgb(255, 255, 255);
+    
+ }
+

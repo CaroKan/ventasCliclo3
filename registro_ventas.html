@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles/ventas.css">
+    <title>Registro de Ventas</title>
+</head>
+
+<body>
+    <!--Menu Navegacion  -->
+    <div class="menu">
+        <h1>DEV-TEAM</h1>
+        <ul>
+            <li>
+                <a href="#" class="item"><img src="/assets/icons/home_24dp.svg" alt="inicio">INICIO</a>
+            </li>
+            <li>
+                <a href="#" class="item"><img src="/assets/icons/inventory_2_24dp.svg" alt="productos">PRODUCTOS</a>
+            </li>
+            <li>
+                <a href="#" class="item"><img src="/assets/icons/store_24dp.svg" alt="ventas">VENTAS</a>
+            </li>
+            <li>
+                <a href="#" class="item"><img src="/assets/icons/manage_accounts_24dp.svg" alt="roles">USUARIOS</a>
+            </li>
+        </ul>
+        <div class="user_img">
+            <img class="userimg" src="/assets/img/usuario.png" alt="Foto del usuario">
+        </div>
+        <div class="user_data">
+            <div>
+                <span>Usuario:</span>
+                <span>XXXXXXX</span>
+            </div>
+            <div>
+                <span>Rol:</span>
+                <span>XXXXXXX</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DEL FORMULARIO -->
+    <section>
+        <h1>GESTIÓN DE VENTAS</h1>
+        <form>
+            <div class='field'>
+                <label>Id Factura</label>
+                <input name='id' type='id' />
+            </div>
+            <div class='field'>
+                <label>Fecha</label>
+                <input name='fecha' type='date' />
+            </div>
+            <div class='field'>
+                <label>Documento</label>
+                <input name='documento' type='number' autocomplete />
+            </div>
+            <div class='field'>
+                <label>Cliente</label>
+                <input name='cliente' type='name' autocomplete />
+            </div>
+            <div class='field'>
+                <label>Vendedor</label>
+                <input name='vendedor' type='name' autocomplete />
+            </div>
+            <table>
+                <thead>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Valor Unitario</th>
+                    <th>Total</th>
+                </thead>
+                <tbody>
+                    <tr class="line">
+                        <td>Producto 1 </td>
+                        <td>3 </td>
+                        <td>5.200 </td>
+                        <td>15.600</td>
+                        <td>
+                            <a href="#" class="edit">Editar</a>
+                        </td>
+                    </tr>
+                    <tr class="line">
+                        <td>Producto 1 </td>
+                        <td>3 </td>
+                        <td>5.200 </td>
+                        <td>15.600</td>
+                        <td>
+                            <a href="#" class="edit">Editar</a>
+                        </td>
+                    </tr>
+                    <tr class="line">
+                        <td>Producto 1 </td>
+                        <td>3 </td>
+                        <td>5.200 </td>
+                        <td>15.600</td>
+                        <td>
+                            <a href="#" class="edit">Editar</a>
+                        </td>
+                    </tr>
+                    <tr class="line">
+                        <td>Producto 3 </td>
+                        <td>2 </td>
+                        <td>2000 </td>
+                        <td>4000</td>
+                        <td>
+                            <a href="#" class="edit">Editar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <ul class='boton'>
+                <div class='submit'>
+                    <button>
+                        Nuevo
+                    </button>
+                </div>
+                <div class='submit'>
+                    <button>
+                        Guardar
+                    </button>
+                </div>
+                <div class='submit'>
+                    <button>
+                        Modificar
+                    </button>
+                </div>
+                <div class='submit'>
+                    <button>
+                        Eliminar
+                    </button>
+                </div>
+                <div class='submit'>
+                    <button>
+                        Cancelar
+                    </button>
+                </div>
+                <div class='submit'>
+                    <button>
+                        Buscar
+                    </button>
+                </div>
+
+            </ul>
+        </form>
+    </section>
+</body>
+
+</html>
