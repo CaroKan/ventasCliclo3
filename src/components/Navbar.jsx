@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ImagenLogo from './ImagenLogo';
 import TriggerDarkMode from './TriggerDarkMode';
 import { useAuth0 } from '@auth0/auth0-react';

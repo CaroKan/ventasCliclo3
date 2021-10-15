@@ -120,7 +120,7 @@ const TablaUsuarios = ({loading, listaUsuarios, setEjecutarConsulta }) => {
       </h2>
       <div className="hidden md:flex w-full">
       {loading ? (
-          <ReactLoading type='cylon' color='#abc123' height={667} width={375} />
+          <ReactLoading  type='cubes' color='#abc123' height={667} width={375} />
         ) : (
         <table className="tabla">
           <thead>
@@ -147,6 +147,7 @@ const TablaUsuarios = ({loading, listaUsuarios, setEjecutarConsulta }) => {
             })}
           </tbody>
         </table>
+        )}
       </div>
       <div className="flex flex-col w-full m-2 md:hidden">
         {usuariosFiltrados.map((el) => {
