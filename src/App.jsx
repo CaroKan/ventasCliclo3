@@ -12,7 +12,7 @@ import { DarkModeContext } from 'context/darkMode';
 import Usuarios from 'pages/admin/Usuarios';
 import Productos from 'pages/admin/Productos';
 import Ventas from 'pages/admin/Ventas';
-
+import { Auth0Provider } from '@auth0/auth0-react';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -21,51 +21,58 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className='App'>
-      <DarkModeContext.Provider value={{ darkMode, setDarkMode }}> 
-        <Router>
-          <Switch>
-          <Route path={['/admin', '/admin/productos','/admin/usuarios','/admin/ventas']}>
-              <PrivateLayout>
-                <Switch>
-                <Route path='/admin/Productos'>
-                    <Productos />
-                  </Route>
-                  <Route path='/admin/usuarios'>
-                    <Usuarios />
-                  </Route>
-                  <Route path='/admin/ventas'>
-                      <Ventas />
-                    </Route>
-                  <Route path='/admin'>
-                    <Admin />
-                  </Route>
-                </Switch>
-              </PrivateLayout>
-            </Route>
-            <Route path={['/login', '/registro']}>
-              <AuthLayout>
-                <Switch>
-                  <Route path='/login'>
-                    <Login />
-                  </Route>
-                  <Route path='/registro'>
-                    <Registro />
-                  </Route>
-                </Switch>
-              </AuthLayout>
-            </Route>
-            <Route path={['/']}>
-              <PublicLayout>
-                <Route path='/'>
-                  <Index />
+    <Auth0Provider
+      domain='misiontic-ventas.us.auth0.com'
+      clientId='iLHEN6Ty0JcQNUvx9pIlwblPG45jzjzR'
+      redirectUri='http://localhost:3000/admin'
+      audience='apiVentas'
+    >  
+        <div className='App'>
+          <DarkModeContext.Provider value={{ darkMode, setDarkMode }}> 
+            <Router>
+              <Switch>
+              <Route path={['/admin', '/admin/productos','/admin/usuarios','/admin/ventas']}>
+                  <PrivateLayout>
+                    <Switch>
+                    <Route path='/admin/Productos'>
+                        <Productos />
+                      </Route>
+                      <Route path='/admin/usuarios'>
+                        <Usuarios />
+                      </Route>
+                      <Route path='/admin/ventas'>
+                          <Ventas />
+                        </Route>
+                      <Route path='/admin'>
+                        <Admin />
+                      </Route>
+                    </Switch>
+                  </PrivateLayout>
                 </Route>
-              </PublicLayout>
-            </Route>
-          </Switch>
-        </Router>
-     </DarkModeContext.Provider> 
-    </div>
+                <Route path={['/login', '/registro']}>
+                  <AuthLayout>
+                    <Switch>
+                      <Route path='/login'>
+                        <Login />
+                      </Route>
+                      <Route path='/registro'>
+                        <Registro />
+                      </Route>
+                    </Switch>
+                  </AuthLayout>
+                </Route>
+                <Route path={['/']}>
+                  <PublicLayout>
+                    <Route path='/'>
+                      <Index />
+                    </Route>
+                  </PublicLayout>
+                </Route>
+              </Switch>
+            </Router>
+        </DarkModeContext.Provider> 
+        </div>
+    </Auth0Provider>    
   );
 }
 

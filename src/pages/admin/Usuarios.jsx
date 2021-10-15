@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { nanoid } from "nanoid";
 import { Dialog, Tooltip } from "@material-ui/core";
 import {obtenerUsuarios,crearUsuario, editarUsuario,deleteUsuario} from "utils/api";
+import ReactLoading from 'react-loading';
 import "react-toastify/dist/ReactToastify.css";
 
 const Usuarios = () => {
@@ -13,19 +14,23 @@ const Usuarios = () => {
   const [textoBoton, setTextoBoton] = useState("Crear Nuevo usuario");
   const [colorBoton, setColorBoton] = useState("indigo");
   const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   //uso el hook useEffct para leer la informacion de la base de datos
   useEffect(() => {
     const fetcUsuarios = async () => {
       //leeo los usuarios pasandole dos funciones; si hay un response lo setea a la tabla usuarios
       //si hay un error lo muestra en consola ---->esta definida en "utils/api.js"
+      setLoading(true);
       await obtenerUsuarios(
         (response) => {
           setUsuarios(response.data);
           setEjecutarConsulta(false);
+          setLoading(false);
         },
         (error) => {
           console.error(error);
+          setLoading(false);
         }
       );
     };
@@ -71,6 +76,7 @@ const Usuarios = () => {
       {/*verifico el estado de la variable tabla para si muestro la tabla o el formulario*/}
       {mostrarTabla ? (
         <TablaUsuarios
+          loading={loading}
           listaUsuarios={usuarios}
           setEjecutarConsulta={setEjecutarConsulta}
         />
@@ -87,7 +93,7 @@ const Usuarios = () => {
 };
 
 //se crea la tabla y se llena con la informacion de la consulta a la base de datos
-const TablaUsuarios = ({ listaUsuarios, setEjecutarConsulta }) => {
+const TablaUsuarios = ({loading, listaUsuarios, setEjecutarConsulta }) => {
   const [busqueda, setBusqueda] = useState('');
   const [usuariosFiltrados, setUsuariosFiltrados] = useState(listaUsuarios);
   //este hook se usa para escuchar cualquier cambio que se haga en el recuadro de busqueda
@@ -113,6 +119,9 @@ const TablaUsuarios = ({ listaUsuarios, setEjecutarConsulta }) => {
         Todos los Usuarios
       </h2>
       <div className="hidden md:flex w-full">
+      {loading ? (
+          <ReactLoading type='cylon' color='#abc123' height={667} width={375} />
+        ) : (
         <table className="tabla">
           <thead>
             <tr>
