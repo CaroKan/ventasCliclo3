@@ -40,3 +40,56 @@ export const deleteUsuario= async (id,sucessCallback, errorCallback) =>{
  };
    await axios.request(options).then(sucessCallback).catch(errorCallback);
 };
+
+//********************************************************************* */
+
+export const obtenerProductos = async (sucessCallback, errorCallback) => {
+  const options = { method: 'GET', url: 'http://localhost:5000/productos/' };
+  await axios.request(options).then(sucessCallback).catch(errorCallback);
+};
+
+export const crearProducto= async (data,sucessCallback, errorCallback) =>{
+  const options = { 
+    method: 'POST',
+    url: 'http://localhost:5000/productos/',
+    headers: { 'Content-Type': 'application/json' },
+    data,
+  };
+    await axios.request(options).then(sucessCallback).catch(errorCallback);
+};
+
+//funcion para editar productos
+export const editarProducto= async (id, data, sucessCallback, errorCallback) =>{
+   //enviar la info al backend
+   const options = {
+    method: 'PATCH',
+    url: `http://localhost:5000/productos/${id}/`,
+    headers: { 'Content-Type': 'application/json' },
+    data,
+  };
+    await axios.request(options).then(sucessCallback).catch(errorCallback);
+};
+
+//funcion para eliminar producto
+export const deleteProducto= async (id,sucessCallback, errorCallback) =>{
+  //enviar la info al backend
+  const options = {
+    method: 'DELETE',
+    url: `http://localhost:5000/productos/${id}/`,
+    headers: { 'Content-Type': 'application/json' },
+ };
+   await axios.request(options).then(sucessCallback).catch(errorCallback);
+};
+
+
+//**************************************************************************** */
+
+export const crearVenta = async (data, successCallback, errorCallback) => {
+  const options = {
+    method: 'POST',
+    url: 'http://localhost:5000/ventas/',
+    headers: { 'Content-Type': 'application/json',  },
+    data,
+  };
+  await axios.request(options).then(successCallback).catch(errorCallback);
+};

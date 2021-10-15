@@ -10,6 +10,8 @@ import Registro from 'pages/auth/Registro';
 import AuthLayout from 'layouts/AuthLayout';
 import { DarkModeContext } from 'context/darkMode';
 import Usuarios from 'pages/admin/Usuarios';
+import Productos from 'pages/admin/Productos';
+import Ventas from 'pages/admin/Ventas';
 
 
 function App() {
@@ -20,15 +22,21 @@ function App() {
 
   return (
     <div className='App'>
-      <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+      <DarkModeContext.Provider value={{ darkMode, setDarkMode }}> 
         <Router>
           <Switch>
-            <Route path={['/admin','/admin/usuarios']}>
+          <Route path={['/admin', '/admin/productos','/admin/usuarios','/admin/ventas']}>
               <PrivateLayout>
                 <Switch>
+                <Route path='/admin/Productos'>
+                    <Productos />
+                  </Route>
                   <Route path='/admin/usuarios'>
                     <Usuarios />
                   </Route>
+                  <Route path='/admin/ventas'>
+                      <Ventas />
+                    </Route>
                   <Route path='/admin'>
                     <Admin />
                   </Route>
@@ -56,7 +64,7 @@ function App() {
             </Route>
           </Switch>
         </Router>
-      </DarkModeContext.Provider>
+     </DarkModeContext.Provider> 
     </div>
   );
 }

@@ -118,11 +118,8 @@ const TablaUsuarios = ({ listaUsuarios, setEjecutarConsulta }) => {
             <tr>
               <th>Id</th>
               <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Teléfono</th>
-              <th>Fecha Nacimiento</th>
-              <th>Correo</th>
-              <th>Contraseña</th>
+              <th>Correo electrónico</th>
+              <th>clave</th>
               <th>Estado</th>
               <th>Rol</th>
               <th>Acciones</th>
@@ -147,9 +144,6 @@ const TablaUsuarios = ({ listaUsuarios, setEjecutarConsulta }) => {
           return (
             <div className="bg-gray-400 m-2 shadow-xl flex flex-col p-2 rounded-xl">
               <span>{el.nombre}</span>
-              <span>{el.apellido}</span>
-              <span>{el.telefono}</span>
-              <span>{el.fechaNacimiento}</span>
               <span>{el.correo}</span>
               <span>{el.contraseña}</span>
               <span>{el.estado}</span>
@@ -168,9 +162,6 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
   const [infoNuevoUsuario, setInfoNuevoUsuario] = useState({
     _id: usuario._id,
     nombre: usuario.nombre,
-    apellido: usuario.apellido,
-    telefono: usuario.telefono,
-    fechaNacimiento: usuario.fechaNacimiento,
     correo: usuario.correo,
     contraseña: usuario.contraseña,
     estado: usuario.estado,
@@ -182,9 +173,6 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
       usuario._id,
       {
         nombre: infoNuevoUsuario.nombre,
-        apellido: infoNuevoUsuario.apellido,
-        telefono: infoNuevoUsuario.telefono,
-        fechaNacimiento: infoNuevoUsuario.fechaNacimiento,
         correo: infoNuevoUsuario.correo,
         contraseña: infoNuevoUsuario.contraseña,
         estado: infoNuevoUsuario.estado,
@@ -233,45 +221,6 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
                 setInfoNuevoUsuario({
                   ...infoNuevoUsuario,
                   nombre: e.target.value,
-                })
-              }
-            />
-          </td>
-          <td>
-            <input
-              className="bg-gray-50 border border-gray-600 p-2 rounded-lg m-2"
-              type="text"
-              value={infoNuevoUsuario.apellido}
-              onChange={(e) =>
-                setInfoNuevoUsuario({
-                  ...infoNuevoUsuario,
-                  apellido: e.target.value,
-                })
-              }
-            />
-          </td>
-          <td>
-            <input
-              className="bg-gray-50 border border-gray-600 p-2 rounded-lg m-2"
-              type="text"
-              value={infoNuevoUsuario.telefono}
-              onChange={(e) =>
-                setInfoNuevoUsuario({
-                  ...infoNuevoUsuario,
-                  telefono: e.target.value,
-                })
-              }
-            />
-          </td>
-          <td>
-            <input
-              className="bg-gray-50 border border-gray-600 p-2 rounded-lg m-2"
-              type="date"
-              value={infoNuevoUsuario.fechaNacimiento}
-              onChange={(e) =>
-                setInfoNuevoUsuario({
-                  ...infoNuevoUsuario,
-                  fechaNacimiento: e.target.value,
                 })
               }
             />
@@ -333,9 +282,6 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta }) => {
         <>
           <td>{usuario._id.slice(20)}</td>
           <td>{usuario.nombre}</td>
-          <td>{usuario.apellido}</td>
-          <td>{usuario.telefono}</td>
-          <td>{usuario.fechaNacimiento}</td>
           <td>{usuario.correo}</td>
           <td>{usuario.contraseña}</td>
           <td>{usuario.estado}</td>
@@ -421,9 +367,6 @@ const FormularioCreacionUsuarios = ({
     await crearUsuario(
       {
         nombre: nuevoUsuario.nombre,
-        apellido: nuevoUsuario.apellido,
-        telefono: nuevoUsuario.telefono,
-        fechaNacimiento: nuevoUsuario.fechaNacimiento,
         correo: nuevoUsuario.correo,
         contraseña: nuevoUsuario.contraseña,
         estado: nuevoUsuario.estado,
@@ -458,35 +401,6 @@ const FormularioCreacionUsuarios = ({
               required
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Fabio"
-            />
-          </label>
-          <label htmlFor="apellido">
-            Apellido
-            <input
-              name="apellido"
-              type="text"
-              required
-              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="Apellido"
-            />
-          </label>
-          <label htmlFor="telefono">
-            Teléfono
-            <input
-              name="telefono"
-              type="tel"
-              required
-              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="3213413210"
-            />
-          </label>
-          <label htmlFor="fechaNacimiento">
-            Fecha de Nacimiento
-            <input
-              name="fechaNacimiento"
-              type="date"
-              required
-              className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
             />
           </label>
           <label htmlFor="correo">
