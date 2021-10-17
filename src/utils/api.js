@@ -16,6 +16,7 @@ export const obtenerUsuarios = async (sucessCallback, errorCallback) => {
   await axios.request(options).then(sucessCallback).catch(errorCallback);
 };
 
+//obtener informacion del usuario que inicio sesion
 export const obtenerDatosUsuario = async (successCallback, errorCallback) => {
   const options = {
     method: 'GET',
@@ -26,6 +27,8 @@ export const obtenerDatosUsuario = async (successCallback, errorCallback) => {
   };
   await axios.request(options).then(successCallback).catch(errorCallback);
 };
+
+
 
 //funcion para crear usuarios
 export const crearUsuario= async (data,sucessCallback, errorCallback) =>{

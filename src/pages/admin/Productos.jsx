@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import PrivateComponent from 'components/PrivateComponent';
 import { ToastContainer, toast } from "react-toastify";
 import { nanoid } from "nanoid";
 import { Dialog, Tooltip } from "@material-ui/core";
@@ -118,6 +119,9 @@ const Productos = () => {
                 <th>Valor Und</th>
                 <th>Estado</th>
                 <th>Descripcion</th>
+                <PrivateComponent rolesList={['admin']}>
+                  <th>Acciones</th>
+                </PrivateComponent>
               </tr>
             </thead>
             <tbody>
@@ -265,62 +269,64 @@ const Productos = () => {
             <td>{producto.descripcion}</td>
           </>
         )}
-        <td>
-          <div className="flex w-full justify-around">
-            {edit ? (
-              <>
-                <Tooltip title="Confirmar Edición" arrow>
-                  <i
-                    onClick={() => actualizarProducto()}
-                    className="fas fa-check text-green-700 hover:text-green-500"
-                  />
-                </Tooltip>
-                <Tooltip title="Cancelar edición" arrow>
-                  <i
-                    onClick={() => setEdit(!edit)}
-                    className="fas fa-ban text-yellow-700 hover:text-yellow-500"
-                  />
-                </Tooltip>
-              </>
-            ) : (
-              <>
-                <Tooltip title="Editar " arrow>
-                  <i
-                    onClick={() => setEdit(!edit)}
-                    className="fas fa-pencil-alt text-yellow-700 hover:text-yellow-500"
-                  />
-                </Tooltip>
-                <Tooltip title="Eliminar " arrow>
-                  <i
-                    onClick={() => setOpenDialog(true)}
-                    className="fas fa-trash text-red-700 hover:text-red-500"
-                  />
-                </Tooltip>
-              </>
-            )}
-          </div>
-          <Dialog open={openDialog}>
-            <div className="p-8 flex flex-col">
-              <h1 className="text-gray-900 text-2xl font-bold">
-                ¿Está seguro de querer eliminar el producto?
-              </h1>
-              <div className="flex w-full items-center justify-center my-4">
-                <button
-                  onClick={() => eliminarProducto()}
-                  className="mx-2 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md"
-                >
-                  Sí
-                </button>
-                <button
-                  onClick={() => setOpenDialog(false)}
-                  className="mx-2 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md"
-                >
-                  No
-                </button>
+        <PrivateComponent rolesList={['admin']}> 
+          <td>
+              <div className="flex w-full justify-around">
+                {edit ? (
+                  <>
+                    <Tooltip title="Confirmar Edición" arrow>
+                      <i
+                        onClick={() => actualizarProducto()}
+                        className="fas fa-check text-green-700 hover:text-green-500"
+                      />
+                    </Tooltip>
+                    <Tooltip title="Cancelar edición" arrow>
+                      <i
+                        onClick={() => setEdit(!edit)}
+                        className="fas fa-ban text-yellow-700 hover:text-yellow-500"
+                      />
+                    </Tooltip>
+                  </>
+                ) : (
+                  <>
+                    <Tooltip title="Editar " arrow>
+                      <i
+                        onClick={() => setEdit(!edit)}
+                        className="fas fa-pencil-alt text-yellow-700 hover:text-yellow-500"
+                      />
+                    </Tooltip>
+                    <Tooltip title="Eliminar " arrow>
+                      <i
+                        onClick={() => setOpenDialog(true)}
+                        className="fas fa-trash text-red-700 hover:text-red-500"
+                      />
+                    </Tooltip>
+                  </>
+                )}
+              </div>    
+            <Dialog open={openDialog}>
+              <div className="p-8 flex flex-col">
+                <h1 className="text-gray-900 text-2xl font-bold">
+                  ¿Está seguro de querer eliminar el producto?
+                </h1>
+                <div className="flex w-full items-center justify-center my-4">
+                  <button
+                    onClick={() => eliminarProducto()}
+                    className="mx-2 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md"
+                  >
+                    Sí
+                  </button>
+                  <button
+                    onClick={() => setOpenDialog(false)}
+                    className="mx-2 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md shadow-md"
+                  >
+                    No
+                  </button>
+                </div>
               </div>
-            </div>
-          </Dialog>
-        </td>
+            </Dialog>
+          </td>
+        </PrivateComponent>   
       </tr>
     );
   };
